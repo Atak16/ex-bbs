@@ -1,7 +1,11 @@
 package com.example.ex_bbs.domain;
 
 import java.util.List;
-
+/**
+ * 記事情報を表すドメインクラスです。
+ * 
+ * @Author 髙橋昂秀
+ */
 public class Article {
     /** 投稿ID */
     private Integer id;

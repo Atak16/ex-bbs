@@ -1,5 +1,9 @@
 package com.example.ex_bbs.domain;
-
+/**
+ * コメント情報を表すドメインクラスです。
+ * 
+ * @Author 髙橋昂秀
+ */
 public class Comment {
     /** コメントID */
     private Integer id;

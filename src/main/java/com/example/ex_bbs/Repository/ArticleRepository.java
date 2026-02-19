@@ -11,7 +11,10 @@ import org.springframework.stereotype.Repository;
 import com.example.ex_bbs.domain.Article;
 
 /**
- * articlesテーブルから記事を取得する
+ * 記事情報を管理するクラスです。
+ * 記事の取得、追加などの操作を行います。
+ * 
+ * @Author 髙橋昂秀
  */
 @Repository
 public class ArticleRepository {

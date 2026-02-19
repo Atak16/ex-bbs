@@ -10,6 +10,12 @@ import org.springframework.stereotype.Repository;
 
 import com.example.ex_bbs.domain.Comment;
 
+/**
+ * コメント情報を管理するクラスです。
+ * コメントの取得、追加などの操作を行います。
+ * 
+ * @Author 髙橋昂秀
+ */
 @Repository
 public class CommentRepository {
     @Autowired
@@ -25,12 +31,12 @@ public class CommentRepository {
         comment.setArticleId(rs.getInt("article_id"));
         return comment;
     };
-//     /**
-//      * 記事IDに紐づくコメント一覧取得
-//      */
-//     public List<Comment> findByArticleId(Integer articleId) {
-//         String sql = "SELECT id, name, content, article_id FROM comment WHERE article_id = :articleId ORDER BY id DESC";
-//         MapSqlParameterSource param = new MapSqlParameterSource().addValue("articleId", articleId);
-//         return template.addValue(sql, COMMENT_ROW_MAPPER, "articleId", articleId);
-//     }
+     /**
+      * 記事IDに紐づくコメント一覧取得
+      */
+     public List<Comment> findByArticleId(Integer articleId) {
+        String sql = "SELECT id, name, content, article_id FROM comment WHERE article_id = :articleId ORDER BY id DESC";
+        MapSqlParameterSource param = new MapSqlParameterSource().addValue("articleId", articleId);
+        return template.query(sql, param, COMMENT_ROW_MAPPER);
+    }
 }
