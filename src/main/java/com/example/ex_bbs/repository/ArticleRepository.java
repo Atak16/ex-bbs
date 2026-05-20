@@ -32,7 +32,7 @@ public class ArticleRepository {
     /**
      * 記事を全件取得
      * 
-     * @return ID の昇順で取得した記事一覧
+     * @return ID の降順で取得した記事一覧
      */
     public List<Article> findAll() {
         String sql = "SELECT id, name, content FROM articles ORDER BY id DESC";

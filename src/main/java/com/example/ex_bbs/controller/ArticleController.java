@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.ex_bbs.domain.Article;
@@ -26,7 +27,7 @@ public class ArticleController {
      * 記事一覧画面を表示
      * @param model
      */
-    @RequestMapping("")
+    @GetMapping("")
     public String index(Model model) {
         List<Article> articleList = articleRepository.findAll();
         model.addAttribute("articleList", articleList);

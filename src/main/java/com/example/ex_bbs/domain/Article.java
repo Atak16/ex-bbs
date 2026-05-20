@@ -36,6 +36,6 @@ public class Article {
     }
     @Override
     public String toString() {
-        return "Comment [id=" + id + ", name=" + name + ", content=" + content + ", commentList=" + commentList + "]";
+        return "Article [id=" + id + ", name=" + name + ", content=" + content + ", commentList=" + commentList + "]";
     }
 }
