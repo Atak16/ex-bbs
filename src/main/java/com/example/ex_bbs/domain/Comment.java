@@ -1,6 +1,10 @@
 package com.example.ex_bbs.domain;
 import java.util.List;
-
+/**
+ * コメント情報を格納するドメインクラス
+ * 
+ * @author Akihide Takahashi
+ */
 public class Comment {
     private Integer id;
     private String name;

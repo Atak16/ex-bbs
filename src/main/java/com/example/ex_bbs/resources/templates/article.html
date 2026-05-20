@@ -14,7 +14,6 @@
         <button type="submit">記事投稿</button>
     </form>
     <hr>
-    <!-- articleListの記事を1件ずつ取得を繰り返す -->
     <div th:each="article : ${articleList}">
         投稿者名：<span th:text="${article.name}"></span><br>
         投稿内容：<br><strong th:text="${article.content}"></strong>

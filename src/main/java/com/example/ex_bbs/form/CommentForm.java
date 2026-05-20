@@ -1,5 +1,9 @@
 package com.example.ex_bbs.form;
-
+/**
+ * コメント情報を格納するフォームクラス
+ * 
+ * @author Akihide Takahashi
+ */
 public class CommentForm {
     private String articleId;
     private String name;

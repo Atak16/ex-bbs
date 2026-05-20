@@ -11,18 +11,24 @@ import com.example.ex_bbs.repository.ArticleRepository;
 
 import org.springframework.ui.Model;
 
+/**
+ * 記事情報を表示するコントローラクラス
+ * 
+ * @author Akihide Takahashi
+ */
 @Controller
 @RequestMapping("/article")
 public class ArticleController {
-    //ArticleRepositoryを注入
     @Autowired
     private ArticleRepository articleRepository;
 
+    /**
+     * 記事一覧画面を表示
+     * @param model
+     */
     @RequestMapping("")
     public String index(Model model) {
-        // 記事全件をList型で格納
         List<Article> articleList = articleRepository.findAll();
-        // 画面側に使えるようにModelに格納
         model.addAttribute("articleList", articleList);
         return "article";
     }

@@ -1,5 +1,9 @@
 package com.example.ex_bbs.form;
-
+/**
+ * 記事情報を格納するフォームクラス
+ * 
+ * @author Akihide Takahashi
+ */
 public class ArticleForm {
     private String name;
     private String content;
