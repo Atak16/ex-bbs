@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form th:action="@{/article/insert}" method="post">
         <label for="name">投稿者名：</label>
         <input type="text" name="name" id="name"><br>
         <label for="content">内容：</label>
