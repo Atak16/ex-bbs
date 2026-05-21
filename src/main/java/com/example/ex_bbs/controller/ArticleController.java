@@ -36,6 +36,10 @@ public class ArticleController {
         return "article";
     }
 
+    /**
+     * 記事を投稿
+     * @param form
+     */
     @PostMapping("/insert")
     public String insert(ArticleForm form) {
         Article article = new Article();
