@@ -9,14 +9,27 @@
     <form th:action="@{/article/insert}" method="post">
         <label for="name">投稿者名：</label>
         <input type="text" name="name" id="name"><br>
-        <label for="content">内容：</label>
+        <label for="content">投稿内容：</label>
         <textarea name="content" id="content"></textarea><br>
         <button type="submit">記事投稿</button>
     </form>
     <hr>
     <div th:each="article : ${articleList}">
         投稿者名：<span th:text="${article.name}"></span><br>
-        投稿内容：<br><strong th:text="${article.content}"></strong>
+        投稿内容：<br><strong th:text="${article.content}"></strong><br>
+        <div th:each="comment : ${article.commentList}">
+            コメント者名：<span th:text="${comment.name}"></span><br>
+            コメント内容:<br><strong th:text="${comment.content}"></strong>
+        </div>
+        <form th:action="@{/article/comment/insert}" method="post">
+            <input type="hidden" name="articleId" th:value="${article.id}">
+            <label>コメント者名：</label>
+            <input type="text" name="name"><br>
+            <label>コメント内容：</label>
+            <textarea name="content"></textarea><br>
+            <button type="submit">コメント投稿</button>
+        </form>
+        <hr>
     </div>
 </body>
 </html>
