@@ -63,6 +63,7 @@ public class ArticleController {
     /**
      * コメントを投稿
      * @param form
+     * @return article.htmlにリダイレクト
      */
     @PostMapping("/comment/insert")
     public String insertComment(CommentForm form) {
