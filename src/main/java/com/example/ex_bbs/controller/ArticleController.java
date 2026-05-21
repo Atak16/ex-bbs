@@ -32,6 +32,7 @@ public class ArticleController {
     /**
      * 記事一覧画面を表示
      * @param model
+     * @return　article.htmlに遷移
      */
     @GetMapping("")
     public String index(Model model) {
@@ -46,6 +47,7 @@ public class ArticleController {
     /**
      * 記事を投稿
      * @param form
+     * @return article.htmlにリダイレクト
      */
     @PostMapping("/insert")
     public String insert(ArticleForm form) {

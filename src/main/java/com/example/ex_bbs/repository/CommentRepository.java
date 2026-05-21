@@ -6,9 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.example.ex_bbs.domain.Comment;
@@ -17,6 +15,8 @@ import com.example.ex_bbs.domain.Comment;
  * コメント情報を管理するリポジトリクラス
  * 
  * @Author Akihide Takahashi
+ * 
+ * @return コメント一覧
  */
 @Repository
 public class CommentRepository {
