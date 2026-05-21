@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.ex_bbs.domain.Article;
+import com.example.ex_bbs.domain.Comment;
 import com.example.ex_bbs.form.ArticleForm;
+import com.example.ex_bbs.form.CommentForm;
 import com.example.ex_bbs.repository.ArticleRepository;
 import com.example.ex_bbs.repository.CommentRepository;
 
@@ -57,4 +59,21 @@ public class ArticleController {
         articleRepository.insert(article);
         return "redirect:/article";
     }
+
+    /**
+     * コメントを投稿
+     * @param form
+     * @return article.htmlにリダイレクト
+     */
+    @PostMapping("/comment/insert")
+    public String insertComment(CommentForm form) {
+        Comment comment = new Comment();
+        comment.setName(form.getName());
+        comment.setContent(form.getContent());
+        comment.setArticleId(Integer.parseInt(form.getArticleId()));
+        commentRepository.insert(comment);
+        return "redirect:/article";
+    }
+    
+
 }
