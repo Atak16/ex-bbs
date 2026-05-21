@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.ex_bbs.domain.Article;
 import com.example.ex_bbs.form.ArticleForm;
 import com.example.ex_bbs.repository.ArticleRepository;
+import com.example.ex_bbs.repository.CommentRepository;
 
 import org.springframework.ui.Model;
 
@@ -25,13 +26,20 @@ public class ArticleController {
     @Autowired
     private ArticleRepository articleRepository;
 
+    @Autowired
+    private CommentRepository commentRepository;
+
     /**
      * 記事一覧画面を表示
      * @param model
+     * @return　article.htmlに遷移
      */
     @GetMapping("")
     public String index(Model model) {
         List<Article> articleList = articleRepository.findAll();
+        for (Article article : articleList) {
+            article.setCommentList(commentRepository.findByArticleId(article.getId()));
+        }
         model.addAttribute("articleList", articleList);
         return "article";
     }
@@ -39,6 +47,7 @@ public class ArticleController {
     /**
      * 記事を投稿
      * @param form
+     * @return article.htmlにリダイレクト
      */
     @PostMapping("/insert")
     public String insert(ArticleForm form) {

@@ -1,5 +1,4 @@
 package com.example.ex_bbs.domain;
-import java.util.List;
 /**
  * コメント情報を格納するドメインクラス
  * 
@@ -9,7 +8,13 @@ public class Comment {
     private Integer id;
     private String name;
     private String content;
-    private List<Comment> commentList;
+    private Integer articleId;
+    public Integer getArticleId() {
+        return articleId;
+    }
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
+    }
     public Integer getId() {
         return id;
     }
@@ -28,14 +33,9 @@ public class Comment {
     public void setContent(String content) {
         this.content = content;
     }
-    public List<Comment> getCommentList() {
-        return commentList;
-    }
-    public void setCommentList(List<Comment> commentList) {
-        this.commentList = commentList;
-    }
     @Override
     public String toString() {
-        return "Comment [id=" + id + ", name=" + name + ", content=" + content + ", commentList=" + commentList + "]";
+        return "Comment [id=" + id + ", name=" + name + ", content=" + content + ", articleId=" + articleId + "]";
     }
+    
 }

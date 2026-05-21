@@ -17,6 +17,8 @@ import com.example.ex_bbs.domain.Article;
  * 記事情報をデータベースから取得するリポジトリクラス
  * 
  * @author Akihide Takahashi
+ * 
+ * @return 記事一覧
  */
 @Repository
 public class ArticleRepository {
