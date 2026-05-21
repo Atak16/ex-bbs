@@ -75,5 +75,15 @@ public class ArticleController {
         return "redirect:/article";
     }
     
-
+    /**
+     * 記事を削除
+     * @param articleId 削除する記事ID
+     * @return article.htmlにリダイレクト
+     */
+    @PostMapping("/delete")
+    public String deleteByArticle(Integer articleId) {
+        commentRepository.deleteByArticleId(articleId);
+        articleRepository.deleteById(articleId);
+        return "redirect:/article";
+    }
 }

@@ -1,6 +1,8 @@
 package com.example.ex_bbs.repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
@@ -53,5 +55,17 @@ public class ArticleRepository {
         SqlParameterSource param = new BeanPropertySqlParameterSource(article);
         String sql = "INSERT INTO articles (name, content) VALUES (:name, :content)";
         template.update(sql, param);
-    }   
+    }
+
+    /**
+     * 記事を削除
+     * 
+     * @param id 削除する記事ID
+     */
+    public void deleteById(Integer id) {
+        String sql = "DELETE FROM articles WHERE id = :id";
+        Map<String, Object> param = new HashMap<>();
+        param.put("id", id);
+        template.update(sql, param);
+    }
 }
